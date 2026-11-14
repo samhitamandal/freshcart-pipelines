@@ -1,0 +1,15 @@
+# Environment & secrets
+.env
+.venv/
+venv/
+
+# Assignment-mandated ignores
+*.pkl
+*.csv
+mage.log
+__pycache__/
+
+# Jupyter & OS artifacts
+.ipynb_checkpoints/
+.DS_Store
+.pytest_cache/
