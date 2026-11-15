@@ -3,9 +3,15 @@ from sklearn.model_selection import train_test_split
 
 # Import Mage's decorators only if they aren't already loaded
 if 'transformer' not in globals():
-    from mage_ai.data_preparation.decorators import transformer
+    try:
+        from mage_ai.data_preparation.decorators import transformer
+    except ImportError:
+        transformer = lambda f: f
 if 'test' not in globals():
-    from mage_ai.data_preparation.decorators import test
+    try:
+        from mage_ai.data_preparation.decorators import test
+    except ImportError:
+        test = lambda f: f
 
 
 # ransformer marks this as a step that changes data coming from an earlier block
